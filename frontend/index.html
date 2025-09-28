@@ -13,76 +13,47 @@
       <button id="btnShowAuth" class="tab active">Autenticación</button>
       <button id="btnShowTasks" class="tab">Mis Tareas</button>
     </nav>
-
-    <!-- Barra de usuario (OCULTA al inicio) -->
-    <div id="userBar" class="user-bar" style="margin-left:auto; display:none; align-items:center; gap:8px;">
+    <div id="userBar" class="user-bar" style="margin-left:auto; display:flex; align-items:center; gap:8px;">
       <span id="userLabel" class="muted">No autenticado</span>
       <button id="btnLogout" class="outline small" title="Cerrar sesión">Cerrar sesión</button>
     </div>
   </header>
 
   <main>
-    <!-- Sección de autenticación -->
-    <section id="authSection" class="panel">
+    <section id="authSection" class="panel visible">
       <div class="card">
-        <h2>Crear cuenta</h2>
+        <h2>Registro</h2>
         <form id="registerForm">
-          <label>
-            Nombre
-            <input type="text" id="registerName" placeholder="Tu nombre" required />
-          </label>
-          <label>
-            Correo
-            <input type="email" id="registerEmail" placeholder="tu@correo.com" required />
-          </label>
-          <label>
-            Contraseña
-            <input type="password" id="registerPassword" placeholder="••••••••" required />
-          </label>
-          <button type="submit" class="primary">Registrarme</button>
+          <label>Nombre<input type="text" id="regName" required /></label>
+          <label>Email<input type="email" id="regEmail" required /></label>
+          <label>Contraseña<input type="password" id="regPassword" required /></label>
+          <button type="submit">Crear cuenta</button>
         </form>
       </div>
-
       <div class="card">
-        <h2>Iniciar sesión</h2>
+        <h2>Login</h2>
         <form id="loginForm">
-          <label>
-            Correo
-            <input type="email" id="loginEmail" placeholder="tu@correo.com" required />
-          </label>
-          <label>
-            Contraseña
-            <input type="password" id="loginPassword" placeholder="••••••••" required />
-          </label>
-          <button type="submit" class="primary">Entrar</button>
+          <label>Email<input type="email" id="loginEmail" required /></label>
+          <label>Contraseña<input type="password" id="loginPassword" required /></label>
+          <button type="submit">Ingresar</button>
         </form>
       </div>
-
       <div id="authStatus" class="status"></div>
     </section>
 
-    <!-- Sección de tareas -->
-    <section id="tasksSection" class="panel" style="display:none;">
+    <section id="tasksSection" class="panel">
       <div class="card">
-        <h2>Nueva tarea</h2>
+        <h2>Crear nueva tarea</h2>
         <form id="taskForm">
-          <label>
-            Título
-            <input type="text" id="taskTitle" placeholder="Ej. Subir repo a GitHub" required />
-          </label>
-          <label>
-            Descripción
-            <textarea id="taskDescription" placeholder="Detalles opcionales"></textarea>
-          </label>
-          <button type="submit" class="primary">Guardar</button>
+          <label>Título<input type="text" id="taskTitle" required /></label>
+          <label>Descripción<textarea id="taskDescription"></textarea></label>
+          <button type="submit">Guardar</button>
         </form>
       </div>
-
       <div class="card">
         <h2>Mis tareas</h2>
         <ul id="tasksList"></ul>
       </div>
-
       <div id="tasksStatus" class="status"></div>
     </section>
   </main>
